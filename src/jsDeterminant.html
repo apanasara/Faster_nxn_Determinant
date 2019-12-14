@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Sarrus's rule Application</h2>
+
+    <p>Faster & memory-efficient nxn-determinant-computation algorithm (without recursion)<br/>
+    <a href="https://en.wikipedia.org/wiki/Rule_of_Sarrus">Wikilink</a></p>
+
+    <p id="demo"></p>
+
+    <script>
+        var txt = "";
+        var numbers = [[10, 20, 10], [4, 5, 6], [2, 3, 5]];
+        var ans = 0;
+
+        var t0 = performance.now();
+        ans = Det(numbers);
+        var t1 = performance.now();
+
+        txt = txt + '|' + numbers.join('|<br>|') + "|<br><br>";
+        txt = txt + "ans : " + ans + "<br>";
+        txt = txt + "time for computation : " + (t1 - t0) + " milliseconds."
+        document.getElementById("demo").innerHTML = txt;
+
+        function Det(ary) {
+            var i = 0,
+                j = 0,
+                i1 = 0,
+                j1 = 0,
+                j2 = 0,
+                t = 0,
+                n = 0,
+                ans = parseFloat(0),
+                diaPlus = parseFloat(1),
+                diaMinus = parseFloat(1);
+
+
+            n = ary.length;
+
+            for (i = 0; i < n; i++) {
+
+                diaPlus = 1;
+                diaMinus = 1;
+
+                for (j = 0; j < n; j++) {
+                    i1 = j;
+                    t = j + i;
+                    j1 = ((t > (n - 1)) ? (t - n) : t);
+                    j2 = (((n - t) < 1) ? (2 * n - t - 1) : (n - t - 1));
+                    diaPlus = diaPlus * ary[i1][j1];
+                    diaMinus = diaMinus * ary[i1][j2];
+                }
+                ans = ans + diaPlus - diaMinus;
+            }
+            return ans;
+        }
+    </script>
+
+</body>
+
+</html>
