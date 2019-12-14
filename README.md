@@ -3,7 +3,7 @@ Faster &amp; memory efficient approach to compute nxn-Determinant thru applying 
 
 *[Wiki Link : https://en.wikipedia.org/wiki/Rule_of_Sarrus]*
 
-This fuction made thru this algorithm is free of Function-Recursive-Calling. Function is using only two loops to compute nxn determinant. Thus, no much memory heap is generated during execution.
+The code-fuction made thru this algorithm is free of Function-Recursive-Calling. Function is using only two loops to compute nxn determinant. Thus, no much memory heap is generated during execution.
 
 
 ## Example of 3x3 Determinant
