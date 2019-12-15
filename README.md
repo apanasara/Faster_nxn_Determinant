@@ -5,6 +5,9 @@ Faster &amp; memory efficient approach to compute nxn-Determinant thru applying 
 
 The code-fuction made thru this algorithm is free of Function-Recursive-Calling. Function is using only two loops to compute nxn determinant. Thus, no much memory heap is generated during execution.
 
+## Mathematical Formulation
+
+![Formula](img/formula.jpg)
 
 ## Example of 3x3 Determinant
 ### Method
